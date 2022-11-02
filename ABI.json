@@ -1,0 +1,324 @@
+[
+  { "inputs": [], "name": "CONTRACT_SUSPENDED", "type": "error" },
+  { "inputs": [], "name": "INVALID_FORWARDER", "type": "error" },
+  { "inputs": [], "name": "TRANSFER_FAILED", "type": "error" },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint8",
+        "name": "version",
+        "type": "uint8"
+      }
+    ],
+    "name": "Initialized",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "previousOwner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "OwnershipTransferred",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "id",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "result",
+        "type": "bool"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "reason",
+        "type": "string"
+      }
+    ],
+    "name": "VerificationResult",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      { "internalType": "bytes32", "name": "_issuer", "type": "bytes32" }
+    ],
+    "name": "addKnownIssuer",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "bytes32", "name": "_did", "type": "bytes32" }
+    ],
+    "name": "getNonce",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "_owner", "type": "address" },
+      { "internalType": "bytes32", "name": "_rootIssuer", "type": "bytes32" },
+      {
+        "internalType": "address",
+        "name": "_trustedForwarder",
+        "type": "address"
+      }
+    ],
+    "name": "initialize",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "isPaused",
+    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "forwarder", "type": "address" }
+    ],
+    "name": "isTrustedForwarder",
+    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "owner",
+    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address payable",
+        "name": "_destination",
+        "type": "address"
+      }
+    ],
+    "name": "recoverBalance",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "contract IERC20",
+        "name": "_token",
+        "type": "address"
+      },
+      { "internalType": "uint256", "name": "_amount", "type": "uint256" },
+      { "internalType": "address", "name": "_destination", "type": "address" }
+    ],
+    "name": "recoverTokenBalance",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "registry",
+    "outputs": [
+      { "internalType": "contract IDIDRegistry", "name": "", "type": "address" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "bytes32", "name": "_issuer", "type": "bytes32" }
+    ],
+    "name": "removeKnownIssuer",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "renounceOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "bool", "name": "_pause", "type": "bool" }],
+    "name": "setPause",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "contract IDIDRegistry",
+        "name": "_registry",
+        "type": "address"
+      }
+    ],
+    "name": "setRegistryAddress",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "bytes32", "name": "_rootIssuer", "type": "bytes32" }
+    ],
+    "name": "setRootIssuer",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_trustedForwarder",
+        "type": "address"
+      }
+    ],
+    "name": "setTrustedForwarder",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "newOwner", "type": "address" }
+    ],
+    "name": "transferOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "trustedForwarder",
+    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          { "internalType": "bytes32", "name": "id", "type": "bytes32" },
+          {
+            "components": [
+              { "internalType": "bytes32", "name": "id", "type": "bytes32" },
+              {
+                "components": [
+                  {
+                    "internalType": "bytes32",
+                    "name": "id",
+                    "type": "bytes32"
+                  },
+                  { "internalType": "bytes", "name": "data", "type": "bytes" }
+                ],
+                "internalType": "struct OnChainCredentialSubject",
+                "name": "credentialSubject",
+                "type": "tuple"
+              },
+              {
+                "internalType": "bytes32",
+                "name": "issuer",
+                "type": "bytes32"
+              },
+              {
+                "internalType": "uint256",
+                "name": "expirationDate",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "issuanceDate",
+                "type": "uint256"
+              },
+              { "internalType": "bytes", "name": "types", "type": "bytes" },
+              {
+                "components": [
+                  { "internalType": "bytes", "name": "types", "type": "bytes" },
+                  {
+                    "internalType": "bytes",
+                    "name": "verificationMethod",
+                    "type": "bytes"
+                  },
+                  {
+                    "internalType": "bytes",
+                    "name": "proofValue",
+                    "type": "bytes"
+                  }
+                ],
+                "internalType": "struct OnChainProof",
+                "name": "proof",
+                "type": "tuple"
+              }
+            ],
+            "internalType": "struct OnChainVerifiableCredential[]",
+            "name": "verifiableCredential",
+            "type": "tuple[]"
+          },
+          {
+            "components": [
+              { "internalType": "bytes", "name": "types", "type": "bytes" },
+              {
+                "internalType": "bytes",
+                "name": "verificationMethod",
+                "type": "bytes"
+              },
+              {
+                "internalType": "bytes",
+                "name": "proofValue",
+                "type": "bytes"
+              },
+              { "internalType": "uint256", "name": "nonce", "type": "uint256" }
+            ],
+            "internalType": "struct OnChainPresentationProof",
+            "name": "proof",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct OnChainVerifiablePresentation",
+        "name": "_presentation",
+        "type": "tuple"
+      },
+      {
+        "internalType": "address",
+        "name": "_presentationSender",
+        "type": "address"
+      }
+    ],
+    "name": "verifyChain",
+    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]
